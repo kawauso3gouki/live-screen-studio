@@ -2,6 +2,8 @@
 
 このツールは、ユーザーの指示に基づいてOpenAIのCodexで生成・改修しました。
 
+![Live Screen Studioの編集画面全体：左側に設定項目、右側に配信画面のプレビュー](docs/images/editor-screenshot.png)
+
 `index.html` をブラウザーで開くと使えます。インストール・サーバー・インターネット接続は不要です。
 
 1. PNG / JPG / WebP画像を選択、またはドロップします。
