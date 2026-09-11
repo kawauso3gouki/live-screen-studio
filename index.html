@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Live Screen Studio — 配信画面メーカー</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div class="brand"><span class="brand-icon">◉</span><div>Live Screen Studio<small>配信画面メーカー</small></div></div><div class="header-right"><span class="local">● ローカルで処理</span><button id="export" class="primary">PNGを書き出す ↗</button></div></header>
+<main>
+<aside>
+<div class="intro"><span class="eyebrow">YOUR IMAGE, LIVE ON SCREEN</span><h1>いつもの画像を、<br>配信のワンシーンに。</h1><p>画像とコメントを設定して、配信風の画面を作成。</p></div>
+<section><h2><b>01</b> 背景画像</h2><label class="drop" id="drop"><input id="image" type="file" accept="image/png,image/jpeg,image/webp"><span class="upload-icon">＋</span><strong>画像を選択・ドロップ</strong><small>PNG / JPG / WebP · 縦長・横長に対応</small></label><p id="imageInfo" class="hint">サンプル背景を表示中</p><button id="removeImage" class="subtle">サンプル背景に戻す</button>
+<label>出力サイズ<select id="ratio"><option value="portrait">9:16 · 縦長 / 1080 × 1920</option><option value="landscape">16:9 · 横長 / 1920 × 1080</option></select></label>
+<label>画像の配置<select id="fit"><option value="cover">画面いっぱいに切り抜く</option><option value="contain">画像全体を表示する</option></select></label>
+<div class="two"><label>左右位置<input id="panX" type="range" min="0" max="100" value="50"></label><label>上下位置<input id="panY" type="range" min="0" max="100" value="50"></label></div>
+</section>
+<section><h2><b>02</b> 配信プロフィール</h2><label>配信者名<input id="name" value="Mika’s room" maxlength="40"></label><label>ひとこと / タイトル<input id="title" value="のんびり、お話ししよう ☕" maxlength="80"></label><div class="two"><label>視聴者数<input id="viewers" type="number" min="0" max="999999999" value="1280"></label><label>いいね数<input id="likes" type="number" min="0" max="999999999" value="24800"></label></div><label>アイコン画像（任意）<input id="avatar" type="file" accept="image/png,image/jpeg,image/webp"></label><button id="removeAvatar" class="subtle">頭文字アイコンに戻す</button></section>
+<section><h2><b>03</b> コメント <span id="commentCount"></span></h2><p class="hint">下のコメントほど新しく表示されます（最大8件）。</p><div id="comments"></div><button id="addComment" class="secondary">＋ コメントを追加</button><label>入力中のコメント<input id="draftComment" type="text" value="" maxlength="200" placeholder="例：こんばんは！今日も楽しみにしてました"></label><p class="hint">画面下の入力欄に表示します。空欄なら「コメントを追加…」を表示。長い文章は末尾を省略します。</p></section>
+<section><h2><b>04</b> 見た目の調整</h2><div class="two"><label>アクセントカラー<input id="accent" type="color" value="#fc507d"></label><label>背景の暗さ<input id="dim" type="range" min="0" max="70" value="12"></label></div><label>UIサイズ<input id="uiScale" type="range" min="75" max="125" value="100"></label><label class="check"><input id="showComments" type="checkbox" checked> コメントを表示</label><label class="check"><input id="showHearts" type="checkbox" checked> 浮かぶハートを表示</label><label class="check"><input id="showLive" type="checkbox" checked> LIVE・視聴者数を表示</label></section>
+<section class="settings"><button id="saveSettings" class="secondary">設定を保存</button><label class="secondary import">設定を読み込む<input id="loadSettings" type="file" accept="application/json,.json"></label><p class="hint">設定JSONには背景・アイコン画像も含まれます。</p></section>
+</aside>
+<article class="workspace"><div class="preview-bar"><div><span class="status-dot"></span> LIVE PREVIEW</div><span id="dimensions">1080 × 1920</span></div><div class="stage"><canvas id="canvas" width="1080" height="1920" aria-label="配信画面のプレビュー"></canvas></div><footer><span>変更はリアルタイムに反映</span><span>PNG · フル解像度 · 透かしなし</span></footer></article>
+</main><div id="toast" role="status" aria-live="polite"></div><script src="app.js"></script>
+</body></html>
