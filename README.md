@@ -2,9 +2,11 @@
 
 このツールは、ユーザーの指示に基づいてOpenAIのCodexで生成・改修しました。
 
+[ブラウザーでLive Screen Studioを使う](https://kawauso3gouki.github.io/live-screen-studio/)
+
 ![Live Screen Studioの編集画面全体：左側に設定項目、右側に配信画面のプレビュー](docs/images/editor-screenshot.png)
 
-`index.html` をブラウザーで開くと使えます。インストール・サーバー・インターネット接続は不要です。
+上のリンクからインストール不要で使えます。ダウンロードした `index.html` をブラウザーで開けば、サーバー・インターネット接続なしでも使えます。
 
 1. PNG / JPG / WebP画像を選択、またはドロップします。
 2. 出力サイズ（9:16 / 16:9）、配置、切り抜き位置を調整します。画像読み込み時は縦横を自動選択します。
